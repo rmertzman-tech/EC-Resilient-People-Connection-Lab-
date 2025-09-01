@@ -83,7 +83,7 @@
         <!-- Welcome Screen -->
         <div id="welcome-screen" class="text-center py-16">
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Welcome to the Ethical Cartography Lab</h1>
-            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">An interactive tool for exploring ethical theory and remarkable lives.</p>
+            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">This is a space to explore ethics not as a set of rules, but as a practice of cultivating capabilities. Discover how diverse historical figures developed similar ethical skills and find role models for your own journey.</p>
             <button id="start-btn" class="mt-8 bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-colors text-lg">
                 Start Here
             </button>
@@ -93,7 +93,7 @@
         <div id="main-content" class="hidden">
             <header class="text-center mb-10 relative">
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Ethical Cartography Lab</h1>
-                <p class="mt-2 text-lg text-gray-600">Connecting Foundational Ideas to Lived Ethical Action</p>
+                <p class="mt-2 text-lg text-gray-600">Ethics as a Practice of Cultivating Capabilities</p>
                 <button id="settings-btn" class="absolute top-0 right-0 text-gray-500 hover:text-gray-800 p-2">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 </button>
@@ -102,64 +102,108 @@
             <main>
                 <!-- Navigation Tabs -->
                 <div class="mb-8 border-b border-gray-200">
-                    <nav class="flex space-x-2 sm:space-x-4" aria-label="Tabs">
-                        <button id="navigators-tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-md" aria-selected="true">Ethical Navigators</button>
-                        <button id="thinkers-tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-md" aria-selected="false">Philosophers & Thinkers</button>
-                        <button id="concepts-tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-md" aria-selected="false">Core Concepts</button>
+                    <nav class="flex flex-wrap -mb-px" aria-label="Tabs">
+                        <button id="navigators-tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md" aria-selected="true">Ethical Navigators</button>
+                        <button id="thinkers-tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md" aria-selected="false">Philosophers & Thinkers</button>
+                        <button id="comparison-tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md" aria-selected="false">Capability & Comparison Lab</button>
+                        <button id="resonance-tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md" aria-selected="false">Personal Resonance Lab</button>
+                        <button id="concepts-tab" class="tab-btn px-3 py-2 font-medium text-sm rounded-t-md" aria-selected="false">Core Concepts</button>
                     </nav>
                 </div>
 
                 <!-- Navigators Section -->
                 <div id="navigators-section">
                     <h2 class="text-2xl font-bold mb-6 text-gray-900">Ethical Navigators in Action</h2>
-                    <div id="profile-grid" class="card-container">
-                        <!-- Profile cards will be injected here by JavaScript -->
-                    </div>
+                    <div id="profile-grid" class="card-container"></div>
                 </div>
 
                 <!-- Thinkers Section -->
                 <div id="thinkers-section" class="hidden">
                     <h2 class="text-2xl font-bold mb-6 text-gray-900">Foundational Philosophers & Scientists</h2>
-                    <div id="thinker-grid" class="card-container">
-                        <!-- Thinker cards will be injected here -->
+                    <div id="thinker-grid" class="card-container"></div>
+                </div>
+                
+                <!-- Comparison Lab Section -->
+                <div id="comparison-section" class="hidden">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-900">Capability & Comparison Lab</h2>
+                    <p class="text-gray-600 mb-6 max-w-3xl">Explore "Functional Equivalence" by comparing any two figures side-by-side, or discover surprising connections by exploring a shared ethical capability.</p>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Direct Comparison</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="figureA-select" class="block text-sm font-medium text-gray-700">Select Figure A</label>
+                                <select id="figureA-select" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"></select>
+                            </div>
+                            <div>
+                                <label for="figureB-select" class="block text-sm font-medium text-gray-700">Select Figure B</label>
+                                <select id="figureB-select" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"></select>
+                            </div>
+                        </div>
+                        <button id="compare-figures-btn" class="mt-4 w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">✨ Analyze Functional Equivalence</button>
+                        <div id="comparison-output" class="mt-4"></div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Explore by Capability</h3>
+                        <div>
+                            <label for="capability-select" class="block text-sm font-medium text-gray-700">Select a Core Ethical Capability</label>
+                            <select id="capability-select" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"></select>
+                        </div>
+                        <div id="capability-explorer-output" class="mt-4 card-container"></div>
+                    </div>
+                </div>
+
+                <!-- Personal Resonance Lab Section -->
+                <div id="resonance-section" class="hidden">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-900">Personal Resonance Lab</h2>
+                    <p class="text-gray-600 mb-6 max-w-3xl">This is a space for your own ethical reflection. Describe a value you hold, a capability you wish to cultivate, or an ethical challenge you are facing. The AI will help you find historical figures who demonstrated functionally equivalent capabilities, providing you with models for your own journey.</p>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <label for="resonance-input" class="block text-sm font-medium text-gray-700">Enter your reflection here (e.g., "I want to be more courageous in speaking up," or "I value compassionate service above all else.")</label>
+                        <textarea id="resonance-input" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"></textarea>
+                        <button id="find-counterparts-btn" class="mt-4 w-full bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">
+                            ✨ Discover Role Models for Your Ethical Journey
+                        </button>
+                        <div id="counterparts-output" class="mt-4"></div>
                     </div>
                 </div>
 
                 <!-- Concepts Section -->
                 <div id="concepts-section" class="hidden">
-                     <h2 class="text-2xl font-bold mb-6 text-gray-900">Core Concepts from the Textbook</h2>
-                     <div id="concept-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Concept cards will be injected here -->
-                     </div>
+                     <h2 class="text-2xl font-bold mb-6 text-gray-900">Core Analytical Concepts</h2>
+                     <div id="concept-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
                 </div>
             </main>
         </div>
 
-        <!-- Privacy Modal -->
+        <!-- Privacy & API Key Modal -->
         <div id="privacy-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-75 h-full w-full z-50 flex items-center justify-center p-4">
             <div class="relative w-full max-w-2xl shadow-lg rounded-lg bg-white">
                 <div class="modal-content p-6">
                     <h2 class="text-2xl font-bold text-gray-900 mb-4">Your Privacy & Psychological Safety</h2>
                     <div class="text-gray-700 space-y-4 text-sm">
-                        <p>This tool is designed for deep, personal reflection. Before you begin, please understand how your data is handled.</p>
+                        <p>This tool is designed for deep, personal reflection. Before you begin, please review the following.</p>
                         <div>
-                            <h3 class="font-semibold">1. How the Dashboard Saves Your Work</h3>
-                            <p>All the text you enter into the fields of this dashboard is saved directly in your browser's local storage. It is not sent to any server, and it is not visible to anyone else, including the creators of this tool. To resume your work, you must use the same computer and browser.</p>
+                            <h3 class="font-semibold">1. Local Data Storage</h3>
+                            <p>All text you enter is saved only in your browser's local storage. It is not sent to any server and is not visible to anyone else. To resume your work, use the same computer and browser.</p>
                         </div>
                         <div>
-                            <h3 class="font-semibold">2. How the AI Analysis Works</h3>
-                            <p>When you click an "Analyze" or "Synthesize" button, the text from the relevant fields is sent to Google's servers to be processed by a large language model. This is done using a secure, encrypted HTTPS connection to protect your privacy during transmission. This interaction is stateless; your data is not stored or used to train the model. However, like any online transmission, it involves sending your text over the internet.</p>
+                            <h3 class="font-semibold">2. AI Analysis & API Key</h3>
+                            <p class="mb-2">To use the AI-powered features (marked with ✨), you need a Gemini API Key. When you use these features, your text is sent securely to Google's servers for processing and is not stored or used for training.</p>
+                            <div class="bg-gray-100 p-3 rounded-lg">
+                                <label for="api-key-input-modal" class="block text-sm font-medium text-gray-700">Enter your Gemini API Key</label>
+                                <input type="password" id="api-key-input-modal" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Enter your key here">
+                                <p class="text-xs text-gray-500 mt-1">You can get a free key from <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">Google AI Studio ↗</a>.</p>
+                            </div>
                         </div>
-                        <div>
+                         <div>
                             <h3 class="font-semibold">3. Advice for Your Psychological Safety</h3>
-                            <p>This is a space for you to explore your own thoughts and feelings. To ensure you feel safe and in control:</p>
-                            <ul class="list-disc list-inside mt-2 space-y-1">
-                                <li><strong>Be Mindful:</strong> You are in complete control of what you write. Only share what feels right to you.</li>
-                                <li><strong>Generalize If Needed:</strong> If you are reflecting on sensitive personal experiences, consider describing them in general terms rather than with specific, identifying details.</li>
-                                <li><strong>Protect Others' Privacy:</strong> Avoid using the real names or identifying information of other people in your reflections without their explicit permission.</li>
+                             <ul class="list-disc list-inside mt-1 space-y-1">
+                                <li><strong>Be Mindful:</strong> You are in complete control of what you write.</li>
+                                <li><strong>Generalize If Needed:</strong> Consider describing sensitive experiences in general terms.</li>
+                                <li><strong>Protect Others' Privacy:</strong> Avoid using real names or identifying information of others.</li>
                             </ul>
                         </div>
-                        <p class="font-medium">By using this tool, you acknowledge this process. We hope it provides a valuable space for your growth and self-discovery.</p>
                     </div>
                     <div class="mt-6 text-right">
                         <button id="continue-btn" class="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">I Understand & Continue</button>
@@ -168,14 +212,14 @@
             </div>
         </div>
 
-        <!-- API Key Modal -->
-        <div id="api-key-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-75 h-full w-full z-50 flex items-center justify-center p-4">
+        <!-- Settings API Key Modal -->
+        <div id="settings-api-key-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-75 h-full w-full z-50 flex items-center justify-center p-4">
             <div class="relative w-full max-w-md shadow-lg rounded-lg bg-white p-6">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Gemini API Key</h2>
-                <p id="api-key-prompt" class="text-gray-700 mb-4 text-sm">Please enter your Gemini API Key to use the AI-powered features. You can get a key from <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">Google AI Studio ↗</a>.</p>
+                <p class="text-gray-700 mb-4 text-sm">Update your Gemini API Key. You can get a key from <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">Google AI Studio ↗</a>.</p>
                 <div>
-                    <label for="api-key-input" class="block text-sm font-medium text-gray-700">Your API Key</label>
-                    <input type="password" id="api-key-input" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                    <label for="api-key-input-settings" class="block text-sm font-medium text-gray-700">Your API Key</label>
+                    <input type="password" id="api-key-input-settings" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                 </div>
                 <div class="mt-6 flex justify-end space-x-3">
                     <button id="cancel-api-key-btn" class="bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-lg hover:bg-gray-300">Cancel</button>
@@ -536,37 +580,75 @@
                     fop: "He projected a future of a mature liberal democracy, where educated citizens participate in governance, individual liberty is maximized, and gender equality is achieved. His works like 'On Liberty' and 'The Subjection of Women' were written as guides for this ongoing project of social reform.",
                     capabilities: ["Capability for Synthesizing Conflicting Philosophies", "Capability for Championing Individual Liberty", "Capability for Radical Empathy and Gender Equality Advocacy"]
                 },
+                 {
+                    name: "Peter Singer",
+                    lifespan: "1946-Present",
+                    title: "The Applied Ethicist & Altruist",
+                    summary: "A contemporary philosopher whose application of utilitarianism to animal rights and global poverty sparked the effective altruism movement.",
+                    assemblyHistory: "Born in Melbourne to Jewish Austrian parents who escaped the Holocaust, his framework was shaped by a secular upbringing that valued rational inquiry and a deep awareness of the consequences of ethical indifference. His philosophical development at Oxford in the 1960s, a time of social upheaval, solidified his commitment to applying rigorous utilitarian analysis to real-world problems.",
+                    broa: "His BROA+ is grounded in utilitarian consequentialism. Beliefs: The right action is the one that maximizes welfare for all affected beings. The capacity for suffering (sentience) is the basis for moral consideration. Rules: Impartially maximize welfare; act on evidence of what is most effective; apply principles consistently. Ontology: A naturalistic worldview with a global moral community that includes all sentient beings. Authenticity: A life where one's actions (like charitable giving and lifestyle choices) are consistent with one's stated moral beliefs about reducing suffering.",
+                    atcf: "Singer has shown remarkable consistency in applying his utilitarian principles across an expanding range of issues, from his groundbreaking work on animal liberation to his arguments on global poverty and effective altruism. He consistently follows the logical conclusions of his framework, even when they are controversial.",
+                    fop: "He projects a future where the 'moral circle' continues to expand, and where reason and evidence guide our ethical choices. He actively works to build the 'Effective Altruism' movement as an institutional legacy to ensure that future generations can reduce suffering and improve the world more effectively.",
+                    capabilities: ["Capability for Applied Ethical Innovation", "Capability for Expanding the Moral Circle", "Capability for Public Intellectual Communication", "Capability for Cross-Disciplinary Synthesis"]
+                },
+                {
+                    name: "Derek Parfit",
+                    lifespan: "1942-2017",
+                    title: "The Identity Revisionist",
+                    summary: "A British philosopher who made groundbreaking contributions to personal identity, ethics, and rationality, known for his rigorous use of thought experiments.",
+                    assemblyHistory: "Shaped by an elite British education (Eton, Oxford) and a deep fascination with puzzles of identity and time. His work was a reaction against what he saw as imprecise thinking in moral philosophy, aiming to bring mathematical rigor to questions of what matters.",
+                    broa: "His BROA+ is built on a reductionist and impartial view of ethics. Beliefs: Personal identity is not what truly matters; psychological continuity is. There may not be a single 'best' moral theory, but different theories might converge on the same conclusions. Rules: Use thought experiments to test intuitions; strive for logical precision; give equal weight to the well-being of all people, including those in the distant future. Ontology: A naturalistic worldview where complex phenomena like 'the self' reduce to simpler physical and psychological events. Authenticity: An unwavering commitment to intellectual honesty, following arguments wherever they lead, regardless of how counterintuitive the conclusions.",
+                    atcf: "Parfit's life was one of extreme intellectual coherence. He spent decades meticulously working on his major books, *Reasons and Persons* and *On What Matters*, ensuring every argument was as precise as possible. His identity as a systematic, analytical philosopher never wavered.",
+                    fop: "He was deeply concerned with the long-term future of humanity. His work on population ethics and future generations was a direct attempt to build a rational framework for making choices that would have the best consequences for all people who will ever live.",
+                    capabilities: ["Capability for Systematic Philosophical Architecture", "Capability for Thought Experiment Innovation", "Capability for Future-Oriented Moral Focus"]
+                },
+                {
+                    name: "Martha Nussbaum",
+                    lifespan: "1947-Present",
+                    title: "The Capabilities Proponent",
+                    summary: "An American philosopher who champions the 'Capabilities Approach,' arguing that social justice means ensuring every individual has the real opportunity to develop their essential human capabilities.",
+                    assemblyHistory: "Her framework was formed through a combination of classical philosophy (especially Aristotle), literary studies, and a growing engagement with feminist theory and international development. Her early training as an actor also gave her a deep appreciation for the role of emotions and narrative in moral life.",
+                    broa: "Her BROA+ is grounded in an Aristotelian and universalist humanism. Beliefs: All humans share a set of central capabilities essential for a flourishing life. Emotions are cognitive and provide vital information for moral reasoning. Rules: Evaluate societies and policies based on whether they provide citizens with the necessary conditions to develop their capabilities. Ontology: A pluralistic view of value; human flourishing is multi-dimensional and cannot be reduced to a single metric like money. Authenticity: An integrated life where intellectual rigor, emotional intelligence, and a commitment to social justice are intertwined.",
+                    atcf: "Nussbaum has demonstrated remarkable consistency in applying and developing her Capabilities Approach across diverse fields, from ancient Greek ethics to modern constitutional law and international development policy. She coherently integrates philosophical analysis, literary interpretation, and practical policy advocacy.",
+                    fop: "She projects a future where global justice and national policies are evaluated not by GDP, but by how well they secure a threshold of central capabilities for every single person, creating a more humane and just world.",
+                    capabilities: ["Capability for Interdisciplinary Synthesis", "Capability for Cross-Cultural Translation", "Capability for Integrating Emotion and Reason"]
+                },
+                {
+                    name: "Kwame Anthony Appiah",
+                    lifespan: "1954-Present",
+                    title: "The Rooted Cosmopolitan",
+                    summary: "A British-Ghanaian philosopher whose work on identity, culture, and cosmopolitanism argues for a world where universal moral concern coexists with respect for particular cultural identities.",
+                    assemblyHistory: "His unique bicultural upbringing—son of an Asante royal and politician in Ghana and a British aristocrat and author in England—provided him with a direct, lived experience of navigating multiple identities. His education at Cambridge grounded him in the analytical tradition of philosophy, which he then applied to questions of race, culture, and postcolonial identity.",
+                    broa: "His BROA+ is defined by 'rooted cosmopolitanism.' Beliefs: We have moral obligations to all human beings, but our particular identities and cultural affiliations also have real value. Identity is not an essence but something we choose and construct from available cultural 'scripts.' Rules: Engage in respectful dialogue across cultures; respect individual choices about identity. Ontology: Race is a social construct, not a biological reality, but it has real-world effects. Authenticity: A life that coherently integrates one's multiple cultural affiliations and moral commitments, embracing complexity over purity.",
+                    atcf: "Appiah's life and work show a consistent effort to bridge divides—between cultures, between academic philosophy and public discourse, and between universal ethics and particular identities. He has maintained a coherent philosophical project while adapting to different institutional and cultural contexts in Ghana, the UK, and the US.",
+                    fop: "He projects a future of global conversation, where people can learn from different cultural traditions without abandoning their own. His work aims to provide the philosophical tools for a globalized world to manage cultural difference peacefully and productively.",
+                    capabilities: ["Capability for Cross-Cultural Translation", "Capability for Public Intellectual Integration", "Capability for Deconstructing Essentialist Identities"]
+                }
             ],
             concepts: [
-                { 
-                    name: "FAIM-QIRF",
-                    description: "A framework for understanding ethical agency through four interconnected components: Functional Equivalence (FEF), Assembly History (AH), Identity Kernel (IK), and Retrocausal Markov Blanket (RMB). It maps how an agent's core values, past experiences, and perception of the future shape their decisions in a given context.",
-                    chapter: "0, 1, and throughout"
+                 { 
+                    name: "Personal Reality Framework (PRF)",
+                    description: "An agent's unique architecture for organizing experience, comprising their Beliefs, Rules, Ontological commitments, and Authenticity criteria (BROA+). It's a dynamic system, shaped by a person's life story (Assembly History), that filters perception and guides action."
                 },
                 {
-                    name: "BROA Filter",
-                    description: "Stands for Beliefs, Rules, Ontology, and Authenticity. This is the mental filter that shapes an individual's ethical perception, determining what they notice and how they interpret a situation before conscious reasoning begins. It's shaped by culture, experience, and identity.",
-                    chapter: "1, 3"
+                    name: "Capability-Based Coordination & Functional Equivalence",
+                    description: "The core principle that ethical coordination doesn't require people to share identical beliefs or values. Instead, they can coordinate effectively by developing 'functionally equivalent' capabilities that achieve the same shared goal. Different paths, same ethical function."
                 },
                 {
-                    name: "ABCD Mindset",
-                    description: "A set of four attentional anchors—Agency, Beauty (or Awe), Context, and Dynamism—used to expand and refine ethical perception. It's a practical tool for navigating complex situations by focusing on who has power, what has value, the surrounding situation, and how things are changing.",
-                    chapter: "1"
+                    name: "Adaptive Temporal Coherence Function (ATCF)",
+                    description: "A measure of an agent's ability to maintain identity and integrity over time. It assesses how well one integrates their past experiences, present actions, and future aspirations into a coherent narrative. High ATCF is a mark of ethical maturity and resilience."
                 },
                 {
-                    name: "Constructor-Phase (CPS) Framework",
-                    description: "The underlying theoretical model of the textbook. It views ethical agents as 'constructors' who build and rebuild their identities and worldviews. It analyzes ethical coherence across four domains: Feeling, Motivation, Reasoning, and Action.",
-                    chapter: "0, 12, 13"
-                },
-                 {
-                    name: "Adaptive Temporal Consistency (ATCF)",
-                    description: "A measure of how well an agent's decisions and actions stay true to their core values (Identity Kernel) over time and across different situations. It signifies ethical coherence, integrity, and resilience, not perfection.",
-                    chapter: "0, 4, 6"
+                    name: "Bootstrap Resolution of Normative Authority",
+                    description: "The meta-ethical idea that the 'ought' of ethics emerges from the practical necessities of being an agent. Any person who can ask 'Why should I be ethical?' already demonstrates a commitment to the temporal coherence and reasoning that ground ethical coordination. Authority comes from within agency itself."
                 },
                 {
-                    name: "Ethical Lenses",
-                    description: "Four major ethical frameworks used as navigational tools: Virtue Ethics (Who should I become?), Deontology (What duties must I follow?), Consequentialism (What outcomes matter most?), and Care Ethics (Who needs care?).",
-                    chapter: "2"
+                    name: "Network-Goal Coordination",
+                    description: "A form of collaboration where diverse stakeholders advance the *same shared network objective* (e.g., 'establish truth and prevent harm') through their different but equivalent skills. This is more resilient than coordination based on temporarily aligned individual interests."
+                },
+                {
+                    name: "Cross-Scale Markup Organization",
+                    description: "The principle that universal information architecture patterns enable coordination across different systems (e.g., biological cells, human consciousness, computer networks). It suggests a deep structural link between logical reasoning and ethical coordination."
                 }
             ],
 
@@ -575,6 +657,7 @@
                 this.renderNavigators();
                 this.renderThinkers();
                 this.renderConcepts();
+                this.renderComparisonLab();
                 this.setupEventListeners();
             },
 
@@ -614,18 +697,32 @@
                 container.innerHTML = this.concepts.map((concept, index) => `
                     <div class="concept-card bg-white p-6 rounded-lg shadow-md flex flex-col">
                          <h3 class="text-xl font-bold text-purple-700">${concept.name}</h3>
-                         <p class="text-sm text-gray-500 mb-2">Relevant Chapters: ${concept.chapter}</p>
-                         <p class="text-gray-600 mt-2 flex-grow">${concept.description}</p>
+                         <p class="text-gray-600 mt-2 flex-grow text-sm">${concept.description}</p>
                          <button class="generate-analogy-btn mt-4 text-sm bg-purple-100 text-purple-700 font-semibold py-2 px-4 rounded-md hover:bg-purple-200 transition-colors" data-index="${index}">✨ Explain with an Analogy</button>
                          <div id="analogy-output-${index}" class="mt-2"></div>
                     </div>
                 `).join('');
             },
 
+            renderComparisonLab() {
+                const allFigures = [...this.navigators.map((p, i) => ({...p, type: 'navigator', index: i})), ...this.thinkers.map((p, i) => ({...p, type: 'thinker', index: i}))]
+                    .sort((a, b) => a.name.localeCompare(b.name));
+                
+                const figureOptions = `<option value="" disabled selected>Select a figure...</option>` + allFigures.map(person => 
+                    `<option value="${person.type}-${person.index}">${person.name} (${person.title})</option>`
+                ).join('');
+
+                document.getElementById('figureA-select').innerHTML = figureOptions;
+                document.getElementById('figureB-select').innerHTML = figureOptions;
+                
+                const uniqueCapabilities = [...new Set(allFigures.flatMap(f => f.capabilities))].sort();
+                const capabilityOptions = `<option value="" disabled selected>Select a capability...</option>` + uniqueCapabilities.map(c => `<option value="${c}">${c}</option>`).join('');
+                document.getElementById('capability-select').innerHTML = capabilityOptions;
+            },
+
             async callGeminiAPI(prompt, outputElement) {
                 if (!this.apiKey) {
-                    document.getElementById('api-key-prompt').innerHTML = `Please enter your Gemini API Key to use this feature. You can get a key from <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">Google AI Studio ↗</a>.`;
-                    document.getElementById('api-key-modal').classList.remove('hidden');
+                    document.getElementById('settings-api-key-modal').classList.remove('hidden');
                     return;
                 }
 
@@ -668,7 +765,6 @@
             },
 
             setupEventListeners() {
-                // Welcome and Privacy Modal Logic
                 const startBtn = document.getElementById('start-btn');
                 const privacyModal = document.getElementById('privacy-modal');
                 const continueBtn = document.getElementById('continue-btn');
@@ -680,6 +776,11 @@
                 });
 
                 continueBtn.addEventListener('click', () => {
+                    const apiKeyInput = document.getElementById('api-key-input-modal').value.trim();
+                    if (apiKeyInput) {
+                        this.apiKey = apiKeyInput;
+                        localStorage.setItem('geminiApiKey', apiKeyInput);
+                    }
                     privacyModal.classList.add('hidden');
                     welcomeScreen.classList.add('hidden');
                     mainContent.classList.remove('hidden');
@@ -691,6 +792,8 @@
                     navigators: { btn: document.getElementById('navigators-tab'), section: document.getElementById('navigators-section') },
                     thinkers:   { btn: document.getElementById('thinkers-tab'),   section: document.getElementById('thinkers-section') },
                     concepts:   { btn: document.getElementById('concepts-tab'),   section: document.getElementById('concepts-section') },
+                    comparison: { btn: document.getElementById('comparison-tab'), section: document.getElementById('comparison-section') },
+                    resonance:  { btn: document.getElementById('resonance-tab'),  section: document.getElementById('resonance-section') }
                 };
 
                 Object.keys(tabs).forEach(key => {
@@ -718,19 +821,19 @@
                     }
                 });
                 
-                // API Key Modal Logic
-                const apiKeyModal = document.getElementById('api-key-modal');
+                // Settings API Key Modal Logic
+                const settingsApiKeyModal = document.getElementById('settings-api-key-modal');
                 document.getElementById('settings-btn').addEventListener('click', () => {
-                    document.getElementById('api-key-input').value = this.apiKey;
-                    apiKeyModal.classList.remove('hidden');
+                    document.getElementById('api-key-input-settings').value = this.apiKey;
+                    settingsApiKeyModal.classList.remove('hidden');
                 });
-                document.getElementById('cancel-api-key-btn').addEventListener('click', () => apiKeyModal.classList.add('hidden'));
+                document.getElementById('cancel-api-key-btn').addEventListener('click', () => settingsApiKeyModal.classList.add('hidden'));
                 document.getElementById('save-api-key-btn').addEventListener('click', () => {
-                    const newKey = document.getElementById('api-key-input').value.trim();
+                    const newKey = document.getElementById('api-key-input-settings').value.trim();
                     if (newKey) {
                         this.apiKey = newKey;
                         localStorage.setItem('geminiApiKey', newKey);
-                        apiKeyModal.classList.add('hidden');
+                        settingsApiKeyModal.classList.add('hidden');
                     } else {
                         alert('Please enter a valid API key.');
                     }
@@ -747,6 +850,96 @@
                         this.callGeminiAPI(prompt, outputElement);
                     }
                 });
+
+                 // Personal Resonance Lab
+                document.getElementById('find-counterparts-btn').addEventListener('click', () => {
+                    const userInput = document.getElementById('resonance-input').value;
+                    if (!userInput.trim()) {
+                        alert("Please describe a value or capability first.");
+                        return;
+                    }
+                    const outputElement = document.getElementById('counterparts-output');
+                    const allFigures = [...this.navigators, ...this.thinkers];
+                    const figuresData = allFigures.map(f => ({ name: f.name, capabilities: f.capabilities.join(', ') }) );
+
+                    const prompt = `You are an AI assistant for a philosophy course. A student has described an ethical value or capability they care about: "${userInput}".
+                    
+                    Analyze the student's input and compare it to the following list of historical figures and their key ethical capabilities:
+                    ${JSON.stringify(figuresData, null, 2)}
+
+                    Identify the top 3-5 figures who demonstrate a functionally equivalent capability. For each match, provide a brief, encouraging explanation of *how* that person's life and actions exemplify the capability the student described, connecting it to their Personal Reality Framework or life story. Frame the response as a guide for the student's own ethical development.`;
+                    
+                    this.callGeminiAPI(prompt, outputElement);
+                });
+
+                // Comparison Lab
+                document.getElementById('compare-figures-btn').addEventListener('click', () => {
+                    const valA = document.getElementById('figureA-select').value;
+                    const valB = document.getElementById('figureB-select').value;
+
+                    if (!valA || !valB) {
+                        alert("Please select two figures to compare.");
+                        return;
+                    }
+                     if (valA === valB) {
+                        alert("Please select two different figures.");
+                        return;
+                    }
+
+                    const [typeA, indexA] = valA.split('-');
+                    const personA = typeA === 'navigator' ? this.navigators[indexA] : this.thinkers[indexA];
+
+                    const [typeB, indexB] = valB.split('-');
+                    const personB = typeB === 'navigator' ? this.navigators[indexB] : this.thinkers[indexB];
+
+                    const outputElement = document.getElementById('comparison-output');
+                    const prompt = `As an AI assistant for a philosophy course, analyze the connection between ${personA.name} and ${personB.name} using the concept of 'Functional Equivalence'.
+
+                    **Background:** The core idea is that different individuals, with different beliefs and life histories (Personal Reality Frameworks), can develop functionally equivalent ethical capabilities that lead to similar ethical actions. They don't need to believe the same thing to be able to *do* the same good thing.
+                    
+                    **Profile for ${personA.name}:**
+                    - Key Ideas/Values: ${personA.identityKernel || personA.broa}
+                    - Key Capabilities: ${personA.capabilities.join(', ')}
+
+                    **Profile for ${personB.name}:**
+                    - Key Ideas/Values: ${personB.identityKernel || personB.broa}
+                    - Key Capabilities: ${personB.capabilities.join(', ')}
+
+                    **Your Task:**
+                    1. Identify one or two key ethical capabilities that both individuals demonstrate.
+                    2. Explain how each person developed this shared capability from their unique background (Assembly History or PRF).
+                    3. Conclude by explaining how this demonstrates 'Functional Equivalence' in action. Frame the analysis for a college student.`;
+
+                    this.callGeminiAPI(prompt, outputElement);
+                });
+
+                document.getElementById('capability-select').addEventListener('change', (e) => {
+                    const selectedCapability = e.target.value;
+                    const outputElement = document.getElementById('capability-explorer-output');
+                    if (selectedCapability) {
+                        const allFigures = [...this.navigators.map((p, i) => ({...p, type: 'navigator', index: i})), ...this.thinkers.map((p, i) => ({...p, type: 'thinker', index: i}))];
+                        const matchingFigures = allFigures.filter(f => f.capabilities.includes(selectedCapability));
+                        
+                        outputElement.innerHTML = matchingFigures.map(person => {
+                             const cardType = person.type === 'navigator' ? 'profile-card' : 'thinker-card';
+                             const color = person.type === 'navigator' ? 'text-indigo-700' : 'text-teal-700';
+                             return `
+                            <div class="${cardType} bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer flex flex-col" data-type="${person.type}" data-index="${person.index}">
+                                <h3 class="text-xl font-bold ${color}">${person.name}</h3>
+                                <p class="text-sm text-gray-500 mb-2">${person.lifespan}</p>
+                                <p class="font-semibold text-gray-800">${person.title}</p>
+                                <p class="text-gray-600 mt-2 text-sm flex-grow">${person.summary}</p>
+                            </div>
+                        `}).join('');
+                        
+                        outputElement.querySelectorAll('.profile-card, .thinker-card').forEach(card => {
+                            card.addEventListener('click', (event) => this.handleCardClick(event));
+                        });
+                    } else {
+                        outputElement.innerHTML = '';
+                    }
+                });
+
             },
             
             handleCardClick(e) {
@@ -790,39 +983,8 @@
                         const prompt = `You are an expert in the life and philosophy of ${data.name}. A student has asked the following modern ethical question: "${userInput}". Based on ${data.name}'s known values ('${data.identityKernel}'), their way of reasoning, and their life experiences, write a short response in their voice, explaining how they might think about this issue.`;
                         this.callGeminiAPI(prompt, outputElement);
                     });
-                } else { // thinker
-                     document.getElementById('analyze-connection-btn').addEventListener('click', () => {
-                        const navigatorSelect = document.getElementById('navigator-select');
-                        const selectedValue = navigatorSelect.value;
-                        if (selectedValue === "") { alert("Please select a person to analyze."); return; }
-
-                        const [type, index] = selectedValue.split('-');
-                        const selectedPerson = type === 'navigator' ? this.navigators[index] : this.thinkers[index];
-                        
-                        const outputElement = document.getElementById('connection-output');
-                        
-                        const person1 = data;
-                        const person2 = selectedPerson;
-
-                        const prompt = `As an AI assistant for a philosophy course, analyze the connection between ${person1.name} and ${person2.name} using the concept of 'Capability-Based Propositions' and 'Functional Equivalence'.
-
-                        **Background:** The core idea is that different individuals, with different beliefs and life histories (Personal Reality Frameworks), can develop functionally equivalent ethical capabilities that lead to similar ethical actions. They don't need to believe the same thing to be able to *do* the same good thing.
-                        
-                        **Profile for ${person1.name}:**
-                        - Key Ideas/Values: ${person1.identityKernel || person1.broa}
-                        - Key Capabilities: ${person1.capabilities.join(', ')}
-
-                        **Profile for ${person2.name}:**
-                        - Key Ideas/Values: ${person2.identityKernel || person2.broa}
-                        - Key Capabilities: ${person2.capabilities.join(', ')}
-
-                        **Your Task:**
-                        1. Identify one or two key ethical capabilities that both individuals demonstrate.
-                        2. Explain how each person developed this shared capability from their unique background (Assembly History or PRF).
-                        3. Conclude by explaining how this demonstrates 'Functional Equivalence' in action. Frame the analysis for a college student.`;
-                        this.callGeminiAPI(prompt, outputElement);
-                    });
-                }
+                } 
+                // Removed thinker-specific logic as it is now part of the comparison lab
             },
 
             getNavigatorModalHtml(data) {
@@ -843,14 +1005,6 @@
             },
             
             getThinkerModalHtml(data) {
-                const allConnectableFigures = [...this.navigators.map((p, i) => ({...p, type: 'navigator', index: i})), ...this.thinkers.map((p, i) => ({...p, type: 'thinker', index: i}))]
-                    .filter(person => person.name !== data.name)
-                    .sort((a, b) => a.name.localeCompare(b.name));
-
-                const figureOptions = allConnectableFigures.map(person => 
-                    `<option value="${person.type}-${person.index}">${person.name} (${person.title})</option>`
-                ).join('');
-
                 return `
                     <h2 class="text-3xl font-bold mb-1 text-teal-800">${data.name}</h2>
                     <p class="text-md text-gray-500 mb-4">${data.title} (${data.lifespan})</p>
@@ -860,19 +1014,6 @@
                         <div><h4 class="font-semibold text-lg text-gray-900 border-b pb-1 mb-2">Adaptive Temporal Consistency (ATCF)</h4><p class="text-sm">${data.atcf}</p></div>
                         <div><h4 class="font-semibold text-lg text-gray-900 border-b pb-1 mb-2">Future-Oriented Projections (FOP)</h4><p class="text-sm">${data.fop}</p></div>
                         <div><h4 class="font-semibold text-lg text-gray-900 border-b pb-1 mb-2">Key Ethical Capabilities</h4><ul class="list-disc list-inside mt-2 space-y-1 text-sm">${data.capabilities.map(c => `<li>${c}</li>`).join('')}</ul></div>
-
-                        <div class="border-t pt-4 mt-4">
-                            <h4 class="font-semibold text-lg text-gray-900 mb-2">Connect Theory to Practice ✨</h4>
-                            <label for="navigator-select" class="block text-sm font-medium text-gray-700">See how ${data.name}'s ideas connect to another historical figure:</label>
-                            <div class="mt-1 flex rounded-md shadow-sm">
-                                <select id="navigator-select" class="flex-1 block w-full rounded-none rounded-l-md border-gray-300">
-                                    <option value="" disabled selected>Select a person to compare...</option>
-                                    ${figureOptions}
-                                </select>
-                                <button id="analyze-connection-btn" class="inline-flex items-center px-3 rounded-r-md border border-l-0 border-gray-300 bg-gray-50 text-gray-500 text-sm hover:bg-gray-100">Analyze</button>
-                            </div>
-                            <div id="connection-output" class="mt-2"></div>
-                        </div>
                     </div>
                 `;
             }
@@ -884,3 +1025,4 @@
     </script>
 </body>
 </html>
+
